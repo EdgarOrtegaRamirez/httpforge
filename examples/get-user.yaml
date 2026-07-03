@@ -1,0 +1,20 @@
+# Example: Simple GET request with assertions
+
+request:
+  name: Get Todo
+  method: GET
+  url: https://jsonplaceholder.typicode.com/todos/1
+  headers:
+    Accept: application/json
+  assertions:
+    - field: status_code
+      op: eq
+      value: "200"
+    - field: json_path
+      path: title
+      op: exists
+      value: ""
+    - field: json_path
+      path: completed
+      op: eq
+      value: "false"

@@ -1,0 +1,8 @@
+# Development environment configuration
+
+name: development
+variables:
+  HOST: httpbin.org
+  PORT: "443"
+  API_TOKEN: dev-token-123
+  USER_ID: "1"

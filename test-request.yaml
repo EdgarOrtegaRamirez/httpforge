@@ -1,0 +1,15 @@
+# Test request for verification
+request:
+  name: Test GET
+  method: GET
+  url: https://jsonplaceholder.typicode.com/todos/1
+  headers:
+    Accept: application/json
+  assertions:
+    - field: status_code
+      op: eq
+      value: "200"
+    - field: json_path
+      path: userId
+      op: eq
+      value: "1"

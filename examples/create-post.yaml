@@ -1,0 +1,23 @@
+# Example: POST request with template variables
+
+request:
+  name: Create Post
+  method: POST
+  url: https://httpbin.org/post
+  headers:
+    Content-Type: application/json
+    Authorization: Bearer ${API_TOKEN}
+  body: |
+    {
+      "title": "${POST_TITLE}",
+      "body": "${POST_BODY}",
+      "userId": 1
+    }
+  body_type: json
+  assertions:
+    - field: status_code
+      op: eq
+      value: "200"
+    - field: json_path
+      op: exists
+      value: "json.title"
