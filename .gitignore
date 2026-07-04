@@ -1,5 +1,5 @@
 # Binary
-httpforge
+./httpforge
 *.exe
 *.exe~
 *.dll
