@@ -92,12 +92,12 @@ func (c *Client) Execute(req *models.Request) (*models.Response, error) {
 	}
 
 	return &models.Response{
-		StatusCode:  resp.StatusCode,
-		Headers:     headers,
-		Body:        string(bodyBytes),
-		Timing:      timing,
-		Size:        len(bodyBytes),
-		Request:     req,
+		StatusCode: resp.StatusCode,
+		Headers:    headers,
+		Body:       string(bodyBytes),
+		Timing:     timing,
+		Size:       len(bodyBytes),
+		Request:    req,
 	}, nil
 }
 

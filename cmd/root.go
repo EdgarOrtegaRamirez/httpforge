@@ -46,7 +46,7 @@ Supports YAML/JSON configs or simple URL shorthand.`,
 var exportCmd = &cobra.Command{
 	Use:   "export <file>",
 	Short: "Export request as code",
-	Long: `Export an HTTP request as curl, Python, or JavaScript code.`,
+	Long:  `Export an HTTP request as curl, Python, or JavaScript code.`,
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return exportRequest(args[0], cmd)
@@ -56,7 +56,7 @@ var exportCmd = &cobra.Command{
 var infoCmd = &cobra.Command{
 	Use:   "info <file>",
 	Short: "Display request configuration",
-	Long: `Parse and display the request configuration without executing it.`,
+	Long:  `Parse and display the request configuration without executing it.`,
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return showInfo(args[0])
@@ -66,7 +66,7 @@ var infoCmd = &cobra.Command{
 var validateCmd = &cobra.Command{
 	Use:   "validate <file>",
 	Short: "Validate request file format",
-	Long: `Parse and validate a request configuration file.`,
+	Long:  `Parse and validate a request configuration file.`,
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return validateFile(args[0])

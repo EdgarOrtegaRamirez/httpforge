@@ -9,12 +9,12 @@ import (
 type HTTPMethod string
 
 const (
-	MethodGET    HTTPMethod = "GET"
-	MethodPOST   HTTPMethod = "POST"
-	MethodPUT    HTTPMethod = "PUT"
-	MethodPATCH  HTTPMethod = "PATCH"
+	MethodGET     HTTPMethod = "GET"
+	MethodPOST    HTTPMethod = "POST"
+	MethodPUT     HTTPMethod = "PUT"
+	MethodPATCH   HTTPMethod = "PATCH"
 	MethodDELETE  HTTPMethod = "DELETE"
-	MethodHEAD   HTTPMethod = "HEAD"
+	MethodHEAD    HTTPMethod = "HEAD"
 	MethodOPTIONS HTTPMethod = "OPTIONS"
 )
 
@@ -34,35 +34,35 @@ type Request struct {
 
 // Response represents an HTTP response.
 type Response struct {
-	StatusCode   int               `json:"status_code"`
-	Headers      map[string]string `json:"headers"`
-	Body         string            `json:"body"`
-	Timing       time.Duration     `json:"timing"`
-	Size         int               `json:"size"`
-	Request      *Request          `json:"request,omitempty"`
+	StatusCode    int               `json:"status_code"`
+	Headers       map[string]string `json:"headers"`
+	Body          string            `json:"body"`
+	Timing        time.Duration     `json:"timing"`
+	Size          int               `json:"size"`
+	Request       *Request          `json:"request,omitempty"`
 	ExtractedVars map[string]string `json:"extracted_vars,omitempty"`
 }
 
 // Environment represents a set of variables for request templating.
 type Environment struct {
-	Name    string            `yaml:"name" json:"name"`
+	Name      string            `yaml:"name" json:"name"`
 	Variables map[string]string `yaml:"variables" json:"variables"`
 }
 
 // Collection represents a group of requests.
 type Collection struct {
-	Name        string     `yaml:"name" json:"name"`
-	Description string     `yaml:"description,omitempty" json:"description,omitempty"`
-	BaseURL     string     `yaml:"base_url,omitempty" json:"base_url,omitempty"`
+	Name        string            `yaml:"name" json:"name"`
+	Description string            `yaml:"description,omitempty" json:"description,omitempty"`
+	BaseURL     string            `yaml:"base_url,omitempty" json:"base_url,omitempty"`
 	Variables   map[string]string `yaml:"variables,omitempty" json:"variables,omitempty"`
-	Requests    []Request  `yaml:"requests" json:"requests"`
+	Requests    []Request         `yaml:"requests" json:"requests"`
 }
 
 // Assertion represents a response assertion.
 type Assertion struct {
-	Field    string `yaml:"field" json:"field"`       // status_code, header, body, json_path
+	Field    string `yaml:"field" json:"field"`                   // status_code, header, body, json_path
 	Path     string `yaml:"path,omitempty" json:"path,omitempty"` // JSON path for json_path field
-	Op       string `yaml:"op" json:"op"`             // eq, ne, gt, lt, contains, matches, exists
+	Op       string `yaml:"op" json:"op"`                         // eq, ne, gt, lt, contains, matches, exists
 	Value    string `yaml:"value" json:"value"`
 	Negative bool   `yaml:"negative,omitempty" json:"negative,omitempty"` // assert NOT
 }
@@ -76,8 +76,8 @@ type AssertionResult struct {
 
 // RequestConfig is the unified request configuration that can be loaded from file.
 type RequestConfig struct {
-	Request     Request             `yaml:"request" json:"request"`
-	Environment *Environment        `yaml:"environment,omitempty" json:"environment,omitempty"`
+	Request     Request      `yaml:"request" json:"request"`
+	Environment *Environment `yaml:"environment,omitempty" json:"environment,omitempty"`
 }
 
 // ExportFormat represents the format for code export.
