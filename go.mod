@@ -1,6 +1,6 @@
 module github.com/EdgarOrtegaRamirez/httpforge
 
-go 1.24.0
+go 1.25
 
 require (
 	github.com/fatih/color v1.19.0
